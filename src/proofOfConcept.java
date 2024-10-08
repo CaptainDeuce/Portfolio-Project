@@ -1,6 +1,7 @@
-import components.list.List;
+import java.util.LinkedList;
+import java.util.List;
 
-public class FantasyFootball<String> {
+public class FantasyFootball<> {
 
     /**
      * Elements included in {@code this}.
