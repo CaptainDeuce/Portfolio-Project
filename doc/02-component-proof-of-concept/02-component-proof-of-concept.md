@@ -98,6 +98,10 @@ do good work.
 > to create a new design. In you do end up picking one at random, you should
 > disclose that here as well.
 
+I decided to pick the Fantasy Football idea. It was the idea that I was originally
+most excited for, and I feel that it is the most unique. I am also just more interested
+in fantasy football than I am in cards or music.
+
 > Once you've argued your choice of design, make a branch in your new repo called
 > something like `proof-of-concept`. There are many ways to do this, but my
 > preference is to use GitHub Desktop. From there, you can click the `Branch`
