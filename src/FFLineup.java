@@ -5,7 +5,6 @@ class Player {
     private String name;
     private String position;
     private String points;
-    // jersey number???????????????
 
     public Player(String name, String position, String points) {
         this.name = name;
