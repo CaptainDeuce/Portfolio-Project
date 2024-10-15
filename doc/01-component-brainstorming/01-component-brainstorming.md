@@ -188,14 +188,15 @@ will likely refine your design to make your implementation easier to use.
     The intent is to use the component to track relevant data for a certain player.
 
   - **Kernel Methods**:
-    - `void addPlayerStats(index i, String s)`: adds `s` to `this` at `i`
-    - `String removePlayerStats(index i)`: removes and returns the string in `this` at `i`
+    - `void addPlayer(Player p)`: adds `p` to `this`
+    - `Player removePlayer(Player p)`: removes and returns `p` in `this`
     - `int size()`: returns the size of `this`
   - **Secondary Methods**:
-    - `String replace(index i, String s)`: replaces the string at `i` with `s` and returns the string
     - `String removeAny()`: removes and returns an arbitrary value from `this`
-    - `void append(index i, FantasyFootball<String> f)`: appends `f` to `this` at `i`
     - `boolean contains(String s)`: reports if `s` is in `this`
+    - `void displayLineup()`: displays `this` to the user
+    - `Player returnPosition(String s)`: retrieves a player in `this` who has position `s`
+    - `Player returnPoints(int i)`: retrives a player in `this` who scored `i` fantasy points
 
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
@@ -211,7 +212,7 @@ will likely refine your design to make your implementation easier to use.
       needing any.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - Yes. For instance, you would have to use `addPlayerStats` and `removePlayerStats` when implementing `replace`
+      - Yes. For instance, you would have to use `removePlayer` when implementing `removeAny`
 
 
 - Component Design #2: `Music Playlist`

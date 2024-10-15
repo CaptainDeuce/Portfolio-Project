@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
+## [2024.10.15]
+
+### Added
+
+- Designed a Player class within the proof of concept
+
+### Updated
+
+- Changed design to remove the replace and append methods
+- Changed design to add the displayLineup, returnPoints, and returnPosition methods
+- Changed design name to FFLineup
+- Changed design to make the method names for addPlayerStats and removePlayerStats into addPlayer and removePlayer
+- Changed the data structure in the proof of concept from a LinkedList to an ArrayList
+- Updated the proof of concept file to match the new changes made above
+
 ## [2024.10.01]
 
 ### Added
