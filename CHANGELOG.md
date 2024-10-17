@@ -10,6 +10,18 @@ the following form: YYYY.0M.0D.
 
 ### Added
 
+- Designed a removeAny method in the proof of concept
+
+### Updated
+
+- Changed the returnPosition method in the proof of concept
+- Fixed some errors within the method ideas
+- Moved some secondary methods to kernel methods
+
+## [2024.10.15]
+
+### Added
+
 - Designed a Player class within the proof of concept
 
 ### Updated

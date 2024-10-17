@@ -49,6 +49,13 @@ public class FFLineup {
         return temp;
     }
 
+    // removeAny
+    public final Player removeAny() {
+        Player temp = new Player("", "", "");
+        temp = this.players.remove(0);
+        return temp;
+    }
+
     // displayLineup
     public final void displayLineup() {
         System.out.println("Lineup: ");
@@ -59,20 +66,27 @@ public class FFLineup {
     }
 
     // returnPosition
-    public final Player returnPosition(String s) {
-        Player ourPerson = new Player("", "", "");
+    public final FFLineup returnPosition(String s) {
+        FFLineup returnedPlayers = new FFLineup(s + " Position");
+        FFLineup tempThisPlayers = new FFLineup("Temp");
+        for (int i = 0; i < this.players.size(); i++) {
+            tempThisPlayers.addPlayer(this.players.remove(i));
+        }
         int i = 0;
-        while (i < this.players.size() && ourPerson.equals(null)) {
-            if (this.players.get(i).getPosition().equals(s)) {
-                ourPerson = this.players.get(i);
+        while (i < this.players.size()) {
+            Player tempPlayer = tempThisPlayers.removeAny();
+            if (tempPlayer.getPosition().equals(s)) {
+                returnedPlayers.addPlayer(tempPlayer);
+            } else {
+                tempThisPlayers.addPlayer(tempPlayer);
             }
             i++;
         }
-        if (ourPerson.equals(null)) {
+        if (returnedPlayers.equals(null)) {
             System.out.println(
                     "There are no players with the " + s + " position.");
         }
-        return ourPerson;
+        return returnedPlayers;
     }
 
     /**
