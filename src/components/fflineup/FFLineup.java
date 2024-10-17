@@ -1,3 +1,5 @@
+package components.fflineup;
+
 /**
  * {@code FFLineupKernel} enhanced with secondary methods.
  */

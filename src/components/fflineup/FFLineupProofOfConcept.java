@@ -1,3 +1,5 @@
+package components.fflineup;
+
 import java.util.ArrayList;
 
 // class for player object
