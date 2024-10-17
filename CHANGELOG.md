@@ -6,7 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## [2024.10.15]
+## [2024.10.17]
+
+### Added
+
+- Designed kernel and enhanced interfaces for FFLineup component
+
+### Updated
+
+- Changed deisgn to update the returnPosition and returnPoints methods
+- Changed the name of the proof of concept file to not interfere with the enhanced interface
+
+## [2024.10.16]
 
 ### Added
 

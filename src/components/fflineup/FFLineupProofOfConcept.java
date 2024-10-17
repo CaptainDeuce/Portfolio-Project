@@ -1,3 +1,5 @@
+package components.fflineup;
+
 import java.util.ArrayList;
 
 // class for player object
@@ -25,12 +27,12 @@ class Player {
     }
 }
 
-public class FFLineup {
+public class FFLineupProofOfConcept {
 
     private String name;
     private ArrayList<Player> players;
 
-    public FFLineup(String name) {
+    public FFLineupProofOfConcept(String name) {
         this.name = name;
         this.players = new ArrayList<>();
     }
@@ -66,9 +68,11 @@ public class FFLineup {
     }
 
     // returnPosition
-    public final FFLineup returnPosition(String s) {
-        FFLineup returnedPlayers = new FFLineup(s + " Position");
-        FFLineup tempThisPlayers = new FFLineup("Temp");
+    public final FFLineupProofOfConcept returnPosition(String s) {
+        FFLineupProofOfConcept returnedPlayers = new FFLineupProofOfConcept(
+                s + " Position");
+        FFLineupProofOfConcept tempThisPlayers = new FFLineupProofOfConcept(
+                "Temp");
         for (int i = 0; i < this.players.size(); i++) {
             tempThisPlayers.addPlayer(this.players.remove(i));
         }
@@ -97,7 +101,8 @@ public class FFLineup {
      */
     public static void main(String[] args) {
         // create a new lineup for my cousin league
-        FFLineup startingLineup = new FFLineup("Cousin League");
+        FFLineupProofOfConcept startingLineup = new FFLineupProofOfConcept(
+                "Cousin League");
 
         // creating players
         Player qb1 = new Player("Jalen Hurts", "QB", "21.86");
