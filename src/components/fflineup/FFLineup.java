@@ -29,7 +29,7 @@ public interface FFLineup extends FFLineupKernel {
     FFLineup returnPosition(String s);
 
     /**
-     * d returns all players with the position {@code d}.
+     * Removes and returns all players who scored {@code d} amount of points.
      *
      * @param d
      *            the points to check
