@@ -1,4 +1,7 @@
 // class for player object
+
+import java.util.ArrayList;
+
 class Player {
     private String name;
     private String position;
@@ -67,17 +70,19 @@ public class FFLineup {
     public final FFLineup returnPosition(String s) {
         FFLineup returnedPlayers = new FFLineup(s + " Position");
         FFLineup tempThisPlayers = new FFLineup("Temp");
-        tempThisPlayers.transferFro(this.players);
+        tempThisPlayers.transferFrom(this.players);
         int i = 0;
         while (i < tempThisPlayers.size()) {
             Player tempPlayer = tempThisPlayers.removeAny();
-            if (tempPlayer.getPosition().equals(s)) {
+            if (tempPlayer.position().equals(s)) {
                 returnedPlayers.addPlayer(tempPlayer);
+                i--;
             } else {
                 tempThisPlayers.addPlayer(tempPlayer);
             }
             i++;
         }
+        return returnedPlayers;
     }
 
     /**
