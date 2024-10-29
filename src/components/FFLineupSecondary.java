@@ -8,8 +8,8 @@ public abstract class FFLineupSecondary implements FFLineup {
     public final void displayLineup() {
         System.out.println("Lineup: ");
         for (Player p : this.players) {
-            System.out.println("- " + p.getName() + ", " + p.getPosition()
-                    + ": " + p.getPoints() + " points");
+            System.out.println("- " + p.name() + ", " + p.position() + ": "
+                    + p.points() + " points");
         }
     }
 
@@ -20,8 +20,9 @@ public abstract class FFLineupSecondary implements FFLineup {
         int i = 0;
         while (i < tempThisPlayers.size()) {
             Player tempPlayer = tempThisPlayers.removeAny();
-            if (tempPlayer.getPosition().equals(s)) {
+            if (tempPlayer.position().equals(s)) {
                 returnedPlayers.addPlayer(tempPlayer);
+                i--;
             } else {
                 tempThisPlayers.addPlayer(tempPlayer);
             }
@@ -37,8 +38,9 @@ public abstract class FFLineupSecondary implements FFLineup {
         int i = 0;
         while (i < tempThisPlayers.size()) {
             Player tempPlayer = tempThisPlayers.removeAny();
-            if (tempPlayer.getPoints().equals(d)) {
+            if (tempPlayer.points().equals(d)) {
                 returnedPlayers.addPlayer(tempPlayer);
+                i--;
             } else {
                 tempThisPlayers.addPlayer(tempPlayer);
             }
