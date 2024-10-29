@@ -6,7 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## [2024.10.15]
+## [2024.10.29]
+
+### Added
+
+- Designed abstract class for FFLineup component
+- Created a record file for the Player class
+
+### Updated
+
+- Fixed the returnPosition and returnPoints methods
+
+
+## [2024.10.16]
 
 ### Added
 
