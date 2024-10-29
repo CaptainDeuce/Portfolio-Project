@@ -5,6 +5,7 @@ package components;
  */
 public abstract class FFLineupSecondary implements FFLineup {
 
+    @Override
     public final void displayLineup() {
         System.out.println("Lineup: ");
         for (Player p : this.players) {
@@ -13,6 +14,7 @@ public abstract class FFLineupSecondary implements FFLineup {
         }
     }
 
+    @Override
     public final FFLineup returnPosition(String s) {
         FFLineup returnedPlayers = new FFLineup(s + " Position");
         FFLineup tempThisPlayers = new FFLineup("Temp");
@@ -28,9 +30,11 @@ public abstract class FFLineupSecondary implements FFLineup {
             }
             i++;
         }
+        this.players.transferFrom(tempThisPlayers);
         return returnedPlayers;
     }
 
+    @Override
     public final FFLineup returnPoints(double d) {
         FFLineup returnedPlayers = new FFLineup(d + " Points");
         FFLineup tempThisPlayers = new FFLineup("Temp");
@@ -46,17 +50,26 @@ public abstract class FFLineupSecondary implements FFLineup {
             }
             i++;
         }
+        this.players.transferFrom(tempThisPlayers);
         return returnedPlayers;
     }
 
     @Override
     public String toString() {
-
+        return "FFLineup{name='" + name + "', players=" + players + "}"
     }
 
     @Override
-    public boolean equals(Object secondObject) {
+    public boolean equals(Object obj) {
+        boolean check = false;
+        if (this == obj) {
+            check = true;
+        }
+        if (obj == null) {
+            check = false;
+        }
 
+        return check;
     }
 
 }
