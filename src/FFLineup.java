@@ -1,12 +1,10 @@
-import java.util.ArrayList;
-
 // class for player object
 class Player {
     private String name;
     private String position;
     private String points;
 
-    public Player(String name, String position, String points) {
+    public Player(String name, String position, Double points) {
         this.name = name;
         this.position = position;
         this.points = points;
@@ -20,7 +18,7 @@ class Player {
         return this.position;
     }
 
-    public String getPoints() {
+    public Double getPoints() {
         return this.points;
     }
 }
@@ -69,11 +67,9 @@ public class FFLineup {
     public final FFLineup returnPosition(String s) {
         FFLineup returnedPlayers = new FFLineup(s + " Position");
         FFLineup tempThisPlayers = new FFLineup("Temp");
-        for (int i = 0; i < this.players.size(); i++) {
-            tempThisPlayers.addPlayer(this.players.remove(i));
-        }
+        tempThisPlayers.transferFro(this.players);
         int i = 0;
-        while (i < this.players.size()) {
+        while (i < tempThisPlayers.size()) {
             Player tempPlayer = tempThisPlayers.removeAny();
             if (tempPlayer.getPosition().equals(s)) {
                 returnedPlayers.addPlayer(tempPlayer);
@@ -82,11 +78,6 @@ public class FFLineup {
             }
             i++;
         }
-        if (returnedPlayers.equals(null)) {
-            System.out.println(
-                    "There are no players with the " + s + " position.");
-        }
-        return returnedPlayers;
     }
 
     /**
