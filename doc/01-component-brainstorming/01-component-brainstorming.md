@@ -195,8 +195,8 @@ will likely refine your design to make your implementation easier to use.
     - `boolean contains(String s)`: reports if `s` is in `this`
   - **Secondary Methods**:
     - `void displayLineup()`: displays `this` to the user
-    - `Player returnPosition(String s)`: retrieves the players in `this` who have position `s`
-    - `Player returnPoints(double d)`: retrieves the players in `this` who scored `d` fantasy points
+    - `FFLineup returnPosition(String s)`: retrieves the players in `this` who have position `s`
+    - `FFLineup returnPoints(double d)`: retrieves the players in `this` who scored `d` fantasy points
 
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):

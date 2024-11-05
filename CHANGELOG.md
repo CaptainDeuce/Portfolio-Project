@@ -17,6 +17,16 @@ the following form: YYYY.0M.0D.
 
 - Fixed the returnPosition and returnPoints methods
 
+## [2024.10.17]
+
+### Added
+
+- Designed kernel and enhanced interfaces for FFLineup component
+
+### Updated
+
+- Changed deisgn to update the returnPosition and returnPoints methods
+- Changed the name of the proof of concept file to not interfere with the enhanced interface
 
 ## [2024.10.16]
 
