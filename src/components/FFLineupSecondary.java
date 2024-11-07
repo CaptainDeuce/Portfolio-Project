@@ -1,5 +1,7 @@
 package components;
 
+import java.util.Iterator;
+
 /**
  * Layered implementations of secondary methods for {@code FFLineup}.
  */
@@ -61,12 +63,28 @@ public abstract class FFLineupSecondary implements FFLineup {
 
     @Override
     public boolean equals(Object obj) {
-        boolean check = false;
-        if (this == obj) {
+        boolean check = true;
+        if (obj == this) {
             check = true;
         }
         if (obj == null) {
             check = false;
+        }
+        if (!(obj instanceof FFLineup)) {
+            check = false;
+        }
+        FFLineup f = (FFlineup) obj;
+        if (this.length() != f.size()) {
+            check = false;
+        }
+        Iterator<T> it1 = this.iterator();
+        Iterator<T> it2 = f.iterator();
+        while (it1.hasNext()) {
+            T x1 = it1.next();
+            Object x2 = it2.next();
+            if (!x1.equals(x2)) {
+                check = false;
+            }
         }
 
         return check;
