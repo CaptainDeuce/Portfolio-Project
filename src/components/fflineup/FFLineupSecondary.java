@@ -1,4 +1,4 @@
-package components;
+package components.fflineup;
 
 import java.util.Iterator;
 
@@ -10,7 +10,7 @@ public abstract class FFLineupSecondary implements FFLineup {
     @Override
     public final void displayLineup() {
         System.out.println("Lineup: ");
-        for (Player p : this.players) {
+        for (Player p : this) {
             System.out.println("- " + p.name() + ", " + p.position() + ": "
                     + p.points() + " points");
         }
@@ -18,9 +18,9 @@ public abstract class FFLineupSecondary implements FFLineup {
 
     @Override
     public final FFLineup returnPosition(String s) {
-        FFLineup returnedPlayers = new FFLineup(s + " Position");
-        FFLineup tempThisPlayers = new FFLineup("Temp");
-        tempThisPlayers.transferFrom(this.players);
+        FFLineup returnedPlayers = this.newInstance();
+        FFLineup tempThisPlayers = this.newInstance();
+        tempThisPlayers.transferFrom(this);
         int i = 0;
         while (i < tempThisPlayers.size()) {
             Player tempPlayer = tempThisPlayers.removeAny();
@@ -32,15 +32,15 @@ public abstract class FFLineupSecondary implements FFLineup {
             }
             i++;
         }
-        this.players.transferFrom(tempThisPlayers);
+        this.transferFrom(tempThisPlayers);
         return returnedPlayers;
     }
 
     @Override
     public final FFLineup returnPoints(double d) {
-        FFLineup returnedPlayers = new FFLineup(d + " Points");
-        FFLineup tempThisPlayers = new FFLineup("Temp");
-        tempThisPlayers.transferFrom(this.players);
+        FFLineup returnedPlayers = this.newInstance();
+        FFLineup tempThisPlayers = this.newInstance();
+        tempThisPlayers.transferFrom(this);
         int i = 0;
         while (i < tempThisPlayers.size()) {
             Player tempPlayer = tempThisPlayers.removeAny();
@@ -52,13 +52,18 @@ public abstract class FFLineupSecondary implements FFLineup {
             }
             i++;
         }
-        this.players.transferFrom(tempThisPlayers);
+        this.transferFrom(tempThisPlayers);
         return returnedPlayers;
     }
 
     @Override
     public String toString() {
-        return "FFLineup{name='" + name + "', players=" + players + "}"
+        String output = "FFLineup{name= " + this.getName() + "; players= ";
+        for (Player p : this) {
+            output += p + ",";
+        }
+        output += "}";
+        return output;
     }
 
     @Override
@@ -73,14 +78,14 @@ public abstract class FFLineupSecondary implements FFLineup {
         if (!(obj instanceof FFLineup)) {
             check = false;
         }
-        FFLineup f = (FFlineup) obj;
-        if (this.length() != f.size()) {
+        FFLineup f = (FFLineup) obj;
+        if (this.size() != f.size()) {
             check = false;
         }
-        Iterator<T> it1 = this.iterator();
-        Iterator<T> it2 = f.iterator();
+        Iterator<Player> it1 = this.iterator();
+        Iterator<Player> it2 = f.iterator();
         while (it1.hasNext()) {
-            T x1 = it1.next();
+            Player x1 = it1.next();
             Object x2 = it2.next();
             if (!x1.equals(x2)) {
                 check = false;
