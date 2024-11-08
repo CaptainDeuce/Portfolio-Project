@@ -69,6 +69,7 @@ public interface FFLineupKernel extends Standard<FFLineup>, Iterable<Player> {
      * Returns the name of the lineup {@code this}.
      *
      * @return the name of the lineup {@code this}
+     * @ensures name = linuep name of {@code this}
      */
     String getName();
 }
