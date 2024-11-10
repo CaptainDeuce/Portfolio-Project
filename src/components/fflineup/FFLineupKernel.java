@@ -5,7 +5,7 @@ import components.standard.Standard;
 /**
  * FFLineup kernel component with primary methods.
  */
-public interface FFLineupKernel extends Standard<FFLineup> {
+public interface FFLineupKernel extends Standard<FFLineup>, Iterable<Player> {
 
     /**
      * Adds {@code p} to this.
@@ -64,4 +64,12 @@ public interface FFLineupKernel extends Standard<FFLineup> {
      * @ensures contains = (s is in this)
      */
     boolean contains(String s);
+
+    /**
+     * Returns the name of the lineup {@code this}.
+     *
+     * @return the name of the lineup {@code this}
+     * @ensures name = linuep name of {@code this}
+     */
+    String getName();
 }
