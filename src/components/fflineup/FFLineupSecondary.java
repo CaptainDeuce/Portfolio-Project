@@ -68,19 +68,18 @@ public abstract class FFLineupSecondary implements FFLineup {
 
     @Override
     public boolean equals(Object obj) {
-        boolean check = true;
         if (obj == this) {
-            check = true;
+            return true;
         }
         if (obj == null) {
-            check = false;
+            return false;
         }
         if (!(obj instanceof FFLineup)) {
-            check = false;
+            return false;
         }
         FFLineup f = (FFLineup) obj;
         if (this.size() != f.size()) {
-            check = false;
+            return false;
         }
         Iterator<Player> it1 = this.iterator();
         Iterator<Player> it2 = f.iterator();
@@ -88,11 +87,17 @@ public abstract class FFLineupSecondary implements FFLineup {
             Player x1 = it1.next();
             Object x2 = it2.next();
             if (!x1.equals(x2)) {
-                check = false;
+                return false;
             }
         }
 
-        return check;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        throw new UnsupportedOperationException(
+                "The hashCode method is not supported.");
     }
 
 }
