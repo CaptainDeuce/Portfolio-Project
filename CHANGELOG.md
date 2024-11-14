@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
+## [2024.11.14]
+
+### Added
+
+- Designed kernel implementation for FFLineup component
+
+### Updated
+
+- Fixed contains method in the kernel interface to have a Player parameter instead of a string
+- Updated the common methods in the abstract class
+
 ## [2024.11.13]
 
 ### Added
