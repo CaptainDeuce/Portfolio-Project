@@ -57,7 +57,7 @@ public abstract class FFLineupSecondary implements FFLineup {
     }
 
     @Override
-    public String toString() {
+    public final String toString() {
         String output = "FFLineup{name= " + this.getName() + "; players= ";
         for (Player p : this) {
             output += p + ",";
@@ -67,7 +67,7 @@ public abstract class FFLineupSecondary implements FFLineup {
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
@@ -95,7 +95,7 @@ public abstract class FFLineupSecondary implements FFLineup {
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         throw new UnsupportedOperationException(
                 "The hashCode method is not supported.");
     }

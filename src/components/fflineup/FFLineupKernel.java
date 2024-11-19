@@ -56,14 +56,14 @@ public interface FFLineupKernel extends Standard<FFLineup>, Iterable<Player> {
     Player removeAny();
 
     /**
-     * Reports whether {@code s} is in {@code this}.
+     * Reports whether {@code p} is in {@code this}.
      *
-     * @param s
-     *            the string to be checked
-     * @return true iff string is in {@code this}
-     * @ensures contains = (s is in this)
+     * @param p
+     *            the player to be checked
+     * @return true iff player is in {@code this}
+     * @ensures contains = (p is in this)
      */
-    boolean contains(String s);
+    boolean contains(Player p);
 
     /**
      * Returns the name of the lineup {@code this}.
