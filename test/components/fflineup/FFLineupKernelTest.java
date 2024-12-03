@@ -443,7 +443,6 @@ public abstract class FFLineupKernelTest {
         test2.transferFrom(test);
 
         assertEquals(test2, test);
-
     }
 
     /**
@@ -458,7 +457,6 @@ public abstract class FFLineupKernelTest {
 
         assertEquals("Test", test2.getName());
         assertEquals("", test.getName());
-
     }
 
     /**
@@ -478,6 +476,5 @@ public abstract class FFLineupKernelTest {
         assertEquals("", test.getName());
         assertEquals(true, test2.contains(jalenHurts));
         assertEquals(false, test.contains(jalenHurts));
-
     }
 }
