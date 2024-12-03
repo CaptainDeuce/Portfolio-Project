@@ -6,6 +6,29 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
+## [2024.12.3]
+
+### Added
+
+- Designed tests for the standard methods.
+
+### Updated
+
+- Fixed some of the tests for the kernel methods.
+
+## [2024.12.2]
+
+### Added
+
+- Designed tests for the kernel methods.
+- Designed the two use cases (multiple lineups and starting roster).
+
+## [2024.11.21]
+
+### Added
+
+- Designed tests for the secondary methods.
+
 ## [2024.11.14]
 
 ### Added
