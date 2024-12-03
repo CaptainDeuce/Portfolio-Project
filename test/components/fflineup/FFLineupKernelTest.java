@@ -73,10 +73,52 @@ public abstract class FFLineupKernelTest {
 
         test.addPlayer(p);
 
-        test.removePlayer(p);
+        Player play = test.removePlayer(p);
 
+        assertEquals(p, play);
+        assertEquals(false, test.contains(p));
+    }
 
-        assertEquals(p, );
+    /**
+     * Testing the removePlayer method with 2 RBs.
+     *
+     * @param p
+     *            the player
+     */
+    @Test
+    public void testRemovePlayer2RB(Player p) {
+        FFLineup test = new FFLineupOnArrayList();
+        Player bijanRobinson = new Player("Bijan Robinson", "RB", null);
+
+        test.addPlayer(bijanRobinson);
+        test.addPlayer(p);
+
+        Player play = test.removePlayer(p);
+
+        assertEquals(p, play);
+        assertEquals(false, test.contains(p));
+    }
+
+    /**
+     * Testing the removePlayer method with 3 WRs.
+     *
+     * @param p
+     *            the player
+     */
+    @Test
+    public void testRemovePlayer3WR(Player p) {
+        FFLineup test = new FFLineupOnArrayList();
+        Player nicoCollins = new Player("Nico Collins", "WR", null);
+        Player jamarrChase = new Player("Ja'Marr Chase", "WR", null);
+
+        test.addPlayer(nicoCollins);
+        test.addPlayer(jamarrChase);
+        test.addPlayer(p);
+
+        Player play = test.removePlayer(p);
+
+        assertEquals(p, play);
+        assertEquals(false, test.contains(p));
     }
 
     /**
@@ -143,6 +185,7 @@ public abstract class FFLineupKernelTest {
 
         assertEquals(testExpected, test);
         assertEquals(jalenHurts, removed);
+        assertEquals(false, test.contains(removed));
     }
 
     /**
@@ -165,6 +208,7 @@ public abstract class FFLineupKernelTest {
 
         assertEquals(testExpected, test);
         assertEquals(checkRemoved, removed);
+        assertEquals(false, test.contains(removed));
     }
 
     /**
@@ -190,6 +234,7 @@ public abstract class FFLineupKernelTest {
 
         assertEquals(testExpected, test);
         assertEquals(checkRemoved, removed);
+        assertEquals(false, test.contains(removed));
     }
 
     /**
@@ -281,8 +326,23 @@ public abstract class FFLineupKernelTest {
         assertEquals(false, check);
     }
 
+    /**
+     * Testing the getName method with an empty string.
+     */
     @Test
-    public void testGetName() {
+    public void testGetNameEmpty() {
+        FFLineup test = new FFLineupOnArrayList();
+
+        String name = test.getName();
+
+        assertEquals("", name);
+    }
+
+    /**
+     * Testing the getName method with a sample name.
+     */
+    @Test
+    public void testGetName1() {
         FFLineup test = new FFLineupOnArrayList("Starting Roster");
 
         String name = test.getName();
