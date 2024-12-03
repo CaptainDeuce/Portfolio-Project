@@ -11,6 +11,7 @@ the following form: YYYY.0M.0D.
 ### Added
 
 - Designed tests for the standard methods.
+- Completed the reflections in the sixth doc file.
 
 ### Updated
 
