@@ -52,7 +52,7 @@ public abstract class FFLineupKernelTest {
     public void testAddPlayer3WR(Player p) {
         FFLineup test = new FFLineupOnArrayList();
         Player nicoCollins = new Player("Nico Collins", "WR", null);
-        Player jamarrChase = new Player("Ja'marr Chase", "WR", null);
+        Player jamarrChase = new Player("Ja'Marr Chase", "WR", null);
 
         test.addPlayer(nicoCollins);
         test.addPlayer(jamarrChase);
@@ -112,7 +112,7 @@ public abstract class FFLineupKernelTest {
     public void testSizeMultiple() {
         FFLineup test = new FFLineupOnArrayList();
         Player nicoCollins = new Player("Nico Collins", "WR", null);
-        Player jamarrChase = new Player("Ja'marr Chase", "WR", null);
+        Player jamarrChase = new Player("Ja'Marr Chase", "WR", null);
         Player drakeLondon = new Player("Drake London", "WR", null);
         Player davanteAdams = new Player("Davante Adams", "WR", null);
 
@@ -176,7 +176,7 @@ public abstract class FFLineupKernelTest {
         FFLineup testExpected = new FFLineupOnArrayList();
 
         Player nicoCollins = new Player("Nico Collins", "WR", null);
-        Player jamarrChase = new Player("Ja'marr Chase", "WR", null);
+        Player jamarrChase = new Player("Ja'Marr Chase", "WR", null);
         Player drakeLondon = new Player("Drake London", "WR", null);
         test.addPlayer(nicoCollins);
         test.addPlayer(jamarrChase);
@@ -250,7 +250,7 @@ public abstract class FFLineupKernelTest {
     public void testContainsMultipleTrue(Player p) {
         FFLineup test = new FFLineupOnArrayList();
         Player nicoCollins = new Player("Nico Collins", "WR", null);
-        Player jamarrChase = new Player("Ja'marr Chase", "WR", null);
+        Player jamarrChase = new Player("Ja'Marr Chase", "WR", null);
         test.addPlayer(nicoCollins);
         test.addPlayer(jamarrChase);
         test.addPlayer(p);
@@ -270,7 +270,7 @@ public abstract class FFLineupKernelTest {
     public void testContainsMultipleFalse(Player p) {
         FFLineup test = new FFLineupOnArrayList();
         Player nicoCollins = new Player("Nico Collins", "WR", null);
-        Player jamarrChase = new Player("Ja'marr Chase", "WR", null);
+        Player jamarrChase = new Player("Ja'Marr Chase", "WR", null);
         Player drakeLondon = new Player("Drake London", "WR", null);
         test.addPlayer(nicoCollins);
         test.addPlayer(jamarrChase);
