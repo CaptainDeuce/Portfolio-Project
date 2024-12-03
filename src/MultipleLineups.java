@@ -1,4 +1,7 @@
-package components.fflineup;
+
+import components.fflineup.FFLineup;
+import components.fflineup.FFLineupOnArrayList;
+import components.fflineup.Player;
 
 /**
  * Class that helps the user to model different fantasy football leagues that
