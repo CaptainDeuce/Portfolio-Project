@@ -15,6 +15,7 @@ the following form: YYYY.0M.0D.
 ### Updated
 
 - Fixed some of the tests for the kernel methods.
+- Deleted proof of concept source file.
 
 ## [2024.12.2]
 

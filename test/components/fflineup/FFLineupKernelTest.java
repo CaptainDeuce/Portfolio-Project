@@ -410,12 +410,11 @@ public abstract class FFLineupKernelTest {
     @Test
     public void testNewInstanceName() {
         FFLineup test = new FFLineupOnArrayList("Test");
+        FFLineup testExpected = new FFLineupOnArrayList();
 
         FFLineup test2 = test.newInstance();
 
-        test.clear();
-
-        assertEquals(test2, test);
+        assertEquals(testExpected, test2);
     }
 
     /**
@@ -424,14 +423,13 @@ public abstract class FFLineupKernelTest {
     @Test
     public void testNewInstanceNameAndPlayer() {
         FFLineup test = new FFLineupOnArrayList("Test");
+        FFLineup testExpected = new FFLineupOnArrayList();
         Player jalenHurts = new Player("Jalen Hurts", "QB", null);
         test.addPlayer(jalenHurts);
 
         FFLineup test2 = test.newInstance();
 
-        test.clear();
-
-        assertEquals(test2, test);
+        assertEquals(testExpected, test2);
     }
 
     /**
