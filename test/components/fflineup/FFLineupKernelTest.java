@@ -349,4 +349,19 @@ public abstract class FFLineupKernelTest {
 
         assertEquals("Starting Roster", name);
     }
+
+    @Test
+    public void testNewInstance() {
+
+    }
+
+    @Test
+    public void testClear() {
+
+    }
+
+    @Test
+    public void testTransferFrom() {
+
+    }
 }
