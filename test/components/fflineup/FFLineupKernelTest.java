@@ -165,7 +165,8 @@ public abstract class FFLineupKernelTest {
 
         int s = test.size();
 
-        assertEquals(4, s);
+        final int four = 4;
+        assertEquals(four, s);
     }
 
     /**
@@ -350,18 +351,135 @@ public abstract class FFLineupKernelTest {
         assertEquals("Starting Roster", name);
     }
 
+    /**
+     * Testing the clear method when the lineup is empty and has no name.
+     */
     @Test
-    public void testNewInstance() {
+    public void testClearEmpty() {
+        FFLineup test = new FFLineupOnArrayList();
+        FFLineup testExpected = new FFLineupOnArrayList();
+
+        test.clear();
+
+        assertEquals(testExpected, test);
+    }
+
+    /**
+     * Testing the clear method when the lineup is empty, but has a name.
+     */
+    @Test
+    public void testClearName() {
+        FFLineup test = new FFLineupOnArrayList("Test");
+        FFLineup testExpected = new FFLineupOnArrayList();
+
+        test.clear();
+
+        assertEquals(testExpected, test);
+    }
+
+    /**
+     * Testing the clear method when the lineup is not empty and has a name.
+     */
+    @Test
+    public void testClearNameAndPlayer() {
+        FFLineup test = new FFLineupOnArrayList("Test");
+        FFLineup testExpected = new FFLineupOnArrayList();
+        Player jalenHurts = new Player("Jalen Hurts", "QB", null);
+        test.addPlayer(jalenHurts);
+
+        test.clear();
+
+        assertEquals(testExpected, test);
+    }
+
+    /**
+     * Testing the newInstance method with empty lineup.
+     */
+    @Test
+    public void testNewInstanceEmpty() {
+        FFLineup test = new FFLineupOnArrayList();
+
+        FFLineup test2 = test.newInstance();
+
+        assertEquals(test2, test);
+    }
+
+    /**
+     * Testing the newInstance method with empty lineup, but has a name.
+     */
+    @Test
+    public void testNewInstanceName() {
+        FFLineup test = new FFLineupOnArrayList("Test");
+
+        FFLineup test2 = test.newInstance();
+
+        test.clear();
+
+        assertEquals(test2, test);
+    }
+
+    /**
+     * Testing the newInstance method with a non-empty lineup and has a name.
+     */
+    @Test
+    public void testNewInstanceNameAndPlayer() {
+        FFLineup test = new FFLineupOnArrayList("Test");
+        Player jalenHurts = new Player("Jalen Hurts", "QB", null);
+        test.addPlayer(jalenHurts);
+
+        FFLineup test2 = test.newInstance();
+
+        test.clear();
+
+        assertEquals(test2, test);
+    }
+
+    /**
+     * Testing the trasferFrom method when the lineup is empty.
+     */
+    @Test
+    public void testTransferFromEmpty() {
+        FFLineup test = new FFLineupOnArrayList();
+        FFLineup test2 = new FFLineupOnArrayList();
+
+        test2.transferFrom(test);
+
+        assertEquals(test2, test);
 
     }
 
+    /**
+     * Testing the trasferFrom method when the lineup is empty, but has a name.
+     */
     @Test
-    public void testClear() {
+    public void testTransferFromName() {
+        FFLineup test = new FFLineupOnArrayList("Test");
+        FFLineup test2 = new FFLineupOnArrayList();
+
+        test2.transferFrom(test);
+
+        assertEquals("Test", test2.getName());
+        assertEquals("", test.getName());
 
     }
 
+    /**
+     * Testing the trasferFrom method when the lineup is non-empty, but has a
+     * name.
+     */
     @Test
-    public void testTransferFrom() {
+    public void testTransferFromNameAndPlayer() {
+        FFLineup test = new FFLineupOnArrayList("Test");
+        Player jalenHurts = new Player("Jalen Hurts", "QB", null);
+        test.addPlayer(jalenHurts);
+        FFLineup test2 = new FFLineupOnArrayList();
+
+        test2.transferFrom(test);
+
+        assertEquals("Test", test2.getName());
+        assertEquals("", test.getName());
+        assertEquals(true, test2.contains(jalenHurts));
+        assertEquals(false, test.contains(jalenHurts));
 
     }
 }
