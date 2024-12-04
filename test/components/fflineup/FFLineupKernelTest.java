@@ -12,113 +12,101 @@ public class FFLineupKernelTest {
 
     /**
      * Testing the addPlayer method with 1 QB.
-     *
-     * @param p
-     *            the player
      */
     @Test
-    public void testAddPlayer1QB(Player p) {
+    public void testAddPlayer1QB() {
         FFLineup test = new FFLineupOnArrayList();
+        Player jalenHurts = new Player("Jalen Hurts", "QB", null);
 
-        test.addPlayer(p);
+        test.addPlayer(jalenHurts);
 
-        assertEquals(p, test.removePlayer(p));
+        assertEquals(jalenHurts, test.removePlayer(jalenHurts));
     }
 
     /**
      * Testing the addPlayer method with 2 RB.
-     *
-     * @param p
-     *            the player
      */
     @Test
-    public void testAddPlayer2RB(Player p) {
+    public void testAddPlayer2RB() {
         FFLineup test = new FFLineupOnArrayList();
         Player bijanRobinson = new Player("Bijan Robinson", "RB", null);
+        Player buckyIrving = new Player("Bucky Irving", "RB", null);
 
         test.addPlayer(bijanRobinson);
-        test.addPlayer(p);
+        test.addPlayer(buckyIrving);
 
-        assertEquals(p, test.removePlayer(p));
+        assertEquals(bijanRobinson, test.removePlayer(bijanRobinson));
     }
 
     /**
      * Testing the addPlayer method with 3 WR.
-     *
-     * @param p
-     *            the player
      */
     @Test
-    public void testAddPlayer3WR(Player p) {
+    public void testAddPlayer3WR() {
         FFLineup test = new FFLineupOnArrayList();
         Player nicoCollins = new Player("Nico Collins", "WR", null);
         Player jamarrChase = new Player("Ja'Marr Chase", "WR", null);
+        Player drakeLondon = new Player("Drake London", "WR", null);
 
         test.addPlayer(nicoCollins);
         test.addPlayer(jamarrChase);
-        test.addPlayer(p);
+        test.addPlayer(drakeLondon);
 
-        assertEquals(p, test.removePlayer(p));
+        assertEquals(nicoCollins, test.removePlayer(nicoCollins));
     }
 
     /**
      * Testing the removePlayer method with 1 QB.
-     *
-     * @param p
-     *            the player
      */
     @Test
-    public void testRemovePlayer1QB(Player p) {
+    public void testRemovePlayer1QB() {
         FFLineup test = new FFLineupOnArrayList();
+        Player jalenHurts = new Player("Jalen Hurts", "QB", null);
 
-        test.addPlayer(p);
+        test.addPlayer(jalenHurts);
 
-        Player play = test.removePlayer(p);
+        Player play = test.removePlayer(jalenHurts);
 
-        assertEquals(p, play);
-        assertEquals(false, test.contains(p));
+        assertEquals(jalenHurts, play);
+        assertEquals(false, test.contains(jalenHurts));
     }
 
     /**
      * Testing the removePlayer method with 2 RBs.
-     *
-     * @param p
-     *            the player
      */
     @Test
-    public void testRemovePlayer2RB(Player p) {
+    public void testRemovePlayer2RB() {
         FFLineup test = new FFLineupOnArrayList();
         Player bijanRobinson = new Player("Bijan Robinson", "RB", null);
+        Player buckyIrving = new Player("Bucky Irving", "RB", null);
 
         test.addPlayer(bijanRobinson);
-        test.addPlayer(p);
+        test.addPlayer(buckyIrving);
 
-        Player play = test.removePlayer(p);
+        Player play = test.removePlayer(bijanRobinson);
 
-        assertEquals(p, play);
-        assertEquals(false, test.contains(p));
+        assertEquals(bijanRobinson, play);
+        assertEquals(false, test.contains(bijanRobinson));
     }
 
     /**
      * Testing the removePlayer method with 3 WRs.
-     *
-     * @param p
-     *            the player
      */
     @Test
-    public void testRemovePlayer3WR(Player p) {
+    public void testRemovePlayer3WR() {
         FFLineup test = new FFLineupOnArrayList();
         Player nicoCollins = new Player("Nico Collins", "WR", null);
         Player jamarrChase = new Player("Ja'Marr Chase", "WR", null);
+        Player drakeLondon = new Player("Drake London", "WR", null);
 
         test.addPlayer(nicoCollins);
         test.addPlayer(jamarrChase);
-        test.addPlayer(p);
+        test.addPlayer(drakeLondon);
 
-        Player play = test.removePlayer(p);
+        Player play = test.removePlayer(nicoCollins);
 
-        assertEquals(p, play);
-        assertEquals(false, test.contains(p));
+        assertEquals(nicoCollins, play);
+        assertEquals(false, test.contains(nicoCollins));
     }
 
     /**
@@ -240,80 +228,51 @@ public class FFLineupKernelTest {
 
     /**
      * Testing the contains method when the lineup is empty.
-     *
-     * @param p
-     *            the player
      */
     @Test
-    public void testContainsEmpty(Player p) {
+    public void testContainsEmpty() {
         FFLineup test = new FFLineupOnArrayList();
+        Player jalenHurts = new Player("Jalen Hurts", "QB", null);
 
-        boolean check = test.contains(p);
+        boolean check = test.contains(jalenHurts);
 
         assertEquals(false, check);
     }
 
     /**
      * Testing the contains method when the lineup has 1 QB.
-     *
-     * @param p
-     *            the player
      */
     @Test
-    public void testContains1QBTrue(Player p) {
-        FFLineup test = new FFLineupOnArrayList();
-        test.addPlayer(p);
-
-        boolean check = test.contains(p);
-
-        assertEquals(true, check);
-    }
-
-    /**
-     * Testing the contains method when the lineup has 1 QB.
-     *
-     * @param p
-     *            the player
-     */
-    @Test
-    public void testContains1QBFalse(Player p) {
+    public void testContains1QBTrue() {
         FFLineup test = new FFLineupOnArrayList();
         Player jalenHurts = new Player("Jalen Hurts", "QB", null);
         test.addPlayer(jalenHurts);
 
-        boolean check = test.contains(p);
-
-        assertEquals(false, check);
-    }
-
-    /**
-     * Testing the contains method when the lineup has 3 WRs.
-     *
-     * @param p
-     *            the player
-     */
-    @Test
-    public void testContainsMultipleTrue(Player p) {
-        FFLineup test = new FFLineupOnArrayList();
-        Player nicoCollins = new Player("Nico Collins", "WR", null);
-        Player jamarrChase = new Player("Ja'Marr Chase", "WR", null);
-        test.addPlayer(nicoCollins);
-        test.addPlayer(jamarrChase);
-        test.addPlayer(p);
-
-        boolean check = test.contains(p);
+        boolean check = test.contains(jalenHurts);
 
         assertEquals(true, check);
     }
 
     /**
-     * Testing the contains method when the lineup has 3 WRs.
-     *
-     * @param p
-     *            the player
+     * Testing the contains method when the lineup has 1 QB.
      */
     @Test
-    public void testContainsMultipleFalse(Player p) {
+    public void testContains1QBFalse() {
+        FFLineup test = new FFLineupOnArrayList();
+        Player jalenHurts = new Player("Jalen Hurts", "QB", null);
+        Player bakerMayfield = new Player("Baker Mayfield", "QB", null);
+        test.addPlayer(jalenHurts);
+
+        boolean check = test.contains(bakerMayfield);
+
+        assertEquals(false, check);
+    }
+
+    /**
+     * Testing the contains method when the lineup has multiple WRs.
+     */
+    @Test
+    public void testContainsMultipleTrue() {
         FFLineup test = new FFLineupOnArrayList();
         Player nicoCollins = new Player("Nico Collins", "WR", null);
         Player jamarrChase = new Player("Ja'Marr Chase", "WR", null);
@@ -322,7 +281,24 @@ public class FFLineupKernelTest {
         test.addPlayer(jamarrChase);
         test.addPlayer(drakeLondon);
 
-        boolean check = test.contains(p);
+        boolean check = test.contains(drakeLondon);
+
+        assertEquals(true, check);
+    }
+
+    /**
+     * Testing the contains method when the lineup has multiple WRs.
+     */
+    @Test
+    public void testContainsMultipleFalse() {
+        FFLineup test = new FFLineupOnArrayList();
+        Player nicoCollins = new Player("Nico Collins", "WR", null);
+        Player jamarrChase = new Player("Ja'Marr Chase", "WR", null);
+        Player drakeLondon = new Player("Drake London", "WR", null);
+        test.addPlayer(nicoCollins);
+        test.addPlayer(jamarrChase);
+
+        boolean check = test.contains(drakeLondon);
 
         assertEquals(false, check);
     }
