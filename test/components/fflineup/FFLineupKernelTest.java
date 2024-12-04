@@ -8,7 +8,7 @@ import org.junit.Test;
  * JUnit test fixture for {@code FFLineup}'s kernel methods and the Standard
  * methods.
  */
-public abstract class FFLineupKernelTest {
+public class FFLineupKernelTest {
 
     /**
      * Testing the addPlayer method with 1 QB.

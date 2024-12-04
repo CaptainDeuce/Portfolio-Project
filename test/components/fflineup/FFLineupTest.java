@@ -7,7 +7,7 @@ import org.junit.Test;
 /**
  * JUnit test fixture for {@code FFLineup}'s secondary methods.
  */
-public abstract class FFLineupTest {
+public class FFLineupTest {
 
     /**
      * Testing the returnPosition method with 0 TEs.
